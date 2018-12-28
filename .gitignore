@@ -6,4 +6,5 @@ __pycache__
 .egg-info
 
 #misc
+.egg-info
 sail.json
