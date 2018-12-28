@@ -1,1 +1,9 @@
+#Editor
 .vscode
+
+#Python
+__pycache__
+.egg-info
+
+#misc
+sail.json
