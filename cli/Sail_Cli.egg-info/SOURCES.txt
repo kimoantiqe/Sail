@@ -1,7 +1,0 @@
-setup.py
-Sail_Cli.egg-info/PKG-INFO
-Sail_Cli.egg-info/SOURCES.txt
-Sail_Cli.egg-info/dependency_links.txt
-Sail_Cli.egg-info/entry_points.txt
-Sail_Cli.egg-info/requires.txt
-Sail_Cli.egg-info/top_level.txt
