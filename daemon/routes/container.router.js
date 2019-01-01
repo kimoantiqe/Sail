@@ -1,20 +1,16 @@
 const express 			= require('express');
 const containrRouter 			  = express.Router();
-const UserController 	= require('../controllers/user.controller');
+const ContainerController 	= require('../controllers/container.controller');
 const passport      	= require('passport');
 require('../middleware/passport')(passport);
 
 
-/* GET home page. */
-containrRouter.get('/', function(req, res, next) {
-  res.json({status:"success", message:"Parcel Pending API", data:{"version_number":"v1.0.0"}})
-});
-
-containrRouter.post(    '/users',           UserController.create);                                                    // C
-containrRouter.get(     '/users',           passport.authenticate('jwt', {session:false}), UserController.get);        // R
-containrRouter.put(     '/users',           passport.authenticate('jwt', {session:false}), UserController.update);     // U
-containrRouter.delete(  '/users',           passport.authenticate('jwt', {session:false}), UserController.remove);     // D
-containrRouter.post(    '/users/login',     UserController.login);
+containrRouter.post(    '/container/start',      passport.authenticate('jwt', {session:false}), ContainerController.start);                                                    // C
+containrRouter.post(    '/container/stop',       passport.authenticate('jwt', {session:false}), ContainerController.stop);   
+containrRouter.post(    '/container/restart',    passport.authenticate('jwt', {session:false}), ContainerController.restart);   
+containrRouter.post(    '/container/create',     passport.authenticate('jwt', {session:false}), ContainerController.create);   
+containrRouter.post(    '/container/remove',     passport.authenticate('jwt', {session:false}), ContainerController.remove);   
+containrRouter.post(    '/container/status',     passport.authenticate('jwt', {session:false}), ContainerController.status);   
 
 
 module.exports = containrRouter;
